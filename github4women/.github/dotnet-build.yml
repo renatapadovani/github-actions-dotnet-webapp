@@ -1,19 +1,18 @@
-name: Executar em push e agendado
+name: Executar em push e a cada hora
 
 on:
-  push:
-    branches:
-      - main  # ou outra branch que desejar monitorar
+  push:             # Aciona quando há push
   schedule:
-    - cron: '0 * * * *'  # executa a cada hora (minuto 0 de cada hora)
+    - cron: '0 * * * *'   # A cada hora (no minuto 0)
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout do código
         uses: actions/checkout@v3
 
-      - name: Rodar script (exemplo)
-        run: echo "Executando workflow por push ou agendamento"
+      - name: Rodar script ou comando
+        run: echo "Executando o workflow"
+        
+        
